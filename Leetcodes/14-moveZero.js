@@ -2,9 +2,9 @@ var moveZeroes = function (nums) {
     var len = nums.length;
     for (var i = 0; i < nums.length; i++) {
         // if 0 swap to the right
-        for (var j = i + 1; j < nums.length; j++) {
+        for (var j = i + 1; j < nums.len; j++) {
             if (nums[i] != undefined && nums[j] != undefined && (nums[i] === 0)) {
-                swap(i, j, nums);
+                swap(i, i + 1, nums);
             }
         }
     }
