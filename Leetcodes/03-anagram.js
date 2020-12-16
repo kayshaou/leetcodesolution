@@ -12,7 +12,6 @@ var isAnagram = function (s, t) {
     var hashMapS = hashMap(s);
     var hashMapT = hashMap(t);
 
-
     // loop thru hashmap
 
     if (!hashMapS || !hashMapT) return false;
