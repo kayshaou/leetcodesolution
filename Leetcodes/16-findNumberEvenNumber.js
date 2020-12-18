@@ -8,7 +8,7 @@ var findNumbers = function (nums) {
         if (myNumber(val) % 2 === 0) { // if even digit
             totalEven++;
         }
-        y = 0; // reset y
+
     }
 
     return totalEven;
@@ -17,22 +17,19 @@ var findNumbers = function (nums) {
 
 
 var myNumber = function (num) {
-    recurse(num, 0);
-    console.log("num " + num + " even/odd " + ((y % 2) ? "even" : "odd"));
-    return y;
+    var r = recurse(num, 0);
+    return r;
 
 };
-var y = 0;
 function recurse(num, x) {
     if (parseInt(num / 10) == 0) {
         x++;
-        y = x;
-        return y;
+        return x;
     }
     else {
         x++;
         let newNum = parseInt(num / 10);
-        recurse(newNum, x);
+        return recurse(newNum, x);
     }
 }
 
