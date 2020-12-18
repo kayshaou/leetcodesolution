@@ -1,13 +1,14 @@
 /* @param { number[] } nums
     * @return { number }
 */
-
+///
 var storage = [];
 var findMaxConsecutiveOnes = function (nums) {
     var cnt = 0;
-    for (const [i, value] in nums) {
-        debugger;
-
+    var traverseIdx = 0;
+    var numLens = nums.length;
+    for (var value of nums) {
+        traverseIdx++;
         if (value == 1) {
             cnt++;
         } else {
@@ -16,10 +17,14 @@ var findMaxConsecutiveOnes = function (nums) {
             }
             cnt = 0;
         }
+
+        if (traverseIdx === numLens && cnt != 0) {
+            storage.push(cnt);
+        }
     }
 
     return Math.max(...storage);
 
 };
 
-console.log(findMaxConsecutiveOnes([0, 1, 1, 1, 1, 0, 1]));
+console.log(findMaxConsecutiveOnes([1]));
